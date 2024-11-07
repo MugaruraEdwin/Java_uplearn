@@ -11,20 +11,25 @@ public class Worker {
 
     private LocalDate endDate;
 
-    public int getAge(){
+    public int getAge(LocalDate birthDate){
         LocalDate currentDate = LocalDate.now();
         int age;
         age= Period.between(birthDate, currentDate).getYears();
+        System.out.println("You are "+ age + " years old");
         return age;
     }
 
-    public double collectPay(){
-        double pay = 1000000.00;
+    public double collectPay(double pay){
+        System.out.println("You collected " +pay+ " for salary");
         return pay;
     }
 
     public String terminate(String endDate){
         return endDate;
+    }
+
+    public Worker(){
+
     }
 
     public Worker(String name, LocalDate birthDate, LocalDate endDate) {
